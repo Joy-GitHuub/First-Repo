@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Input Field</h3>
+    <button id="minus-btn">Click-</button>
+    <input id="input-number" type="text" value="1" >
+    <button id="plus-btn">Click+</button>
+
+    <script>
+        document.getElementById('plus-btn').addEventListener('click', function() {
+            const inputField = document.getElementById('input-number');
+            const inputValueText = inputField.value;
+            console.log(inputValueText);
+            if (inputField.value < 5) {
+                const previousValue = parseInt(inputValueText) + 1;
+            
+            inputField.value = previousValue; 
+            document.getElementById('minus-btn').disabled = false;  
+            }
+            else{
+                alert('Just Input Value Set 5 Time');
+                document.getElementById('plus-btn').disabled = true;
+            }
+
+        });
+
+        document.getElementById('minus-btn').addEventListener('click', function() {
+            const inputField = document.getElementById('input-number');
+            const inputValueText = inputField.value;
+            if(inputField.value > 0){
+                const previousValue = parseInt(inputValueText) - 1;
+            inputField.value = previousValue;
+            document.getElementById('plus-btn').disabled = false;
+            }
+            else{
+                document.getElementById('minus-btn').disabled = true; 
+            }
+        })
+
+    </script>
+</body>
+</html>

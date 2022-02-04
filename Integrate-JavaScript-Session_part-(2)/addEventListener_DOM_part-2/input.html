@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Box</title>
+</head>
+<body>
+    <h1>Button Update</h1>
+
+    <p id="p"></p>
+    <input type="text" id="input" placeholder="input Name"> 
+    <button id="btn">click Me</button>
+
+    <script>
+
+        console.log('Input Name');
+
+        
+        document.getElementById('btn').addEventListener('click', function(){
+        const inputValue = document.getElementById('input').value;
+        const p = document.getElementById('p');
+        p.innerText = inputValue;
+        document.getElementById('input').value = '';
+        });
+    </script>
+</body>
+</html>
